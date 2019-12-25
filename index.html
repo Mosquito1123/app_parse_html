@@ -71,11 +71,15 @@
                 <span style="width: 0; flex: 1; overflow-wrap: break-word; word-wrap: break-word;">${ result['package'] || result['CFBundleName'] }</span>
               </p>
               <p style="padding: 10px 0; display: flex; overflow: hidden;">
+                <span style="color: #000; text-align: right; width: 100px; font-weight: 600; padding-right: 20px;">bundle identifier: </span>
+                <span style="width: 0; flex: 1; overflow-wrap: break-word; word-wrap: break-word;">${ result['package'] || result['CFBundleIdentifier'] }</span>
+              </p>
+              <p style="padding: 10px 0; display: flex; overflow: hidden;">
                 <span style="color: #000; text-align: right; width: 100px; font-weight: 600; padding-right: 20px;">app version: </span>
                 <span style="width: 0; flex: 1; overflow-wrap: break-word; word-wrap: break-word;">${ result['versionName'] || result['CFBundleShortVersionString'] }</span>
               </p>
               <p style="padding: 10px 0; display: flex; overflow: hidden;">
-                <span style="color: #000; text-align: right; width: 100px; font-weight: 600; padding-right: 20px;">wechatKey: </span>
+                <span style="color: #000; text-align: right; width: 100px; word-wrap: break-word;font-weight: 600; padding-right: 20px;">wechatKey: </span>
                 <span style="width: 0; flex: 1; overflow-wrap: break-word; word-wrap: break-word;">${ wechatKey }</span>
               </p>
               <p style="padding: 10px 0; display: flex; overflow: hidden;">
@@ -83,7 +87,7 @@
                 <span style="width: 0; flex: 1; overflow-wrap: break-word; word-wrap: break-word;">${ linkdeepKey }</span>
               </p>
               <p style="padding: 10px 0; display: flex; overflow: hidden;">
-                <span style="color: #000; text-align: right; width: 100px; font-weight: 600; padding-right: 20px;">linkDeepGroupKey: </span>
+                <span style="color: #000; text-align: right; width: 100px; font-weight: 600;word-wrap: break-word; padding-right: 20px;">linkDeepGroup Key: </span>
                 <span style="width: 0; flex: 1; overflow-wrap: break-word; word-wrap: break-word;">${ linkDeepGroupKey }</span>
               </p>
               <p style="padding: 10px 0; display: flex; overflow: hidden;">
