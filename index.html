@@ -60,6 +60,10 @@
                 <span style="color: #000; text-align: right; width: 100px; font-weight: 600; padding-right: 20px;">app version: </span>
                 <span style="width: 0; flex: 1; overflow-wrap: break-word; word-wrap: break-word;">${ result['versionName'] || result['CFBundleShortVersionString'] }</span>
               </p>
+              <p style="padding: 10px 0; display: flex; overflow: hidden;">
+                <span style="color: #000; text-align: right; width: 100px; font-weight: 600; padding-right: 20px;">result: </span>
+                <span style="width: 0; flex: 1; overflow-wrap: break-word; word-wrap: break-word;">${ result }</span>
+              </p>
             </div>
           `
             document.getElementById('result-list').appendChild(div)
