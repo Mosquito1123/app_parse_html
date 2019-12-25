@@ -43,17 +43,17 @@
         const parser = new AppInfoParser(files[0])
         parser.parse().then(result => {
           const wechatURLType = result['CFBundleURLTypes'].find(element => element['CFBundleURLName'] == 'com.wechat');
-          const wechatKey = wechatURLType['CFBundleURLSchemes'].first;
+          const wechatKey = wechatURLType['CFBundleURLSchemes'][0];
           const linkDeepURLType = result['CFBundleURLTypes'].find(element => element['CFBundleURLName'] == 'com.link-deep.appkey');
-          const linkdeepKey = linkDeepURLType['CFBundleURLSchemes'].first;
+          const linkdeepKey = linkDeepURLType['CFBundleURLSchemes'][0];
           const linkDeepGroupURLType = result['CFBundleURLTypes'].find(element => element['CFBundleURLName'] == 'com.link-deep.groupkey');
-          const linkDeepGroupKey = linkDeepGroupURLType['CFBundleURLSchemes'].first;
+          const linkDeepGroupKey = linkDeepGroupURLType['CFBundleURLSchemes'][0];
           const qqURLType = result['CFBundleURLTypes'].find(element => element['CFBundleURLName'] == 'com.qq');
-          const qqKey = qqURLType['CFBundleURLSchemes'].first;
+          const qqKey = qqURLType['CFBundleURLSchemes'][0];
           const sinaURLType = result['CFBundleURLTypes'].find(element => element['CFBundleURLName'] == 'com.sina');
-          const sinaKey = sinaURLType['CFBundleURLSchemes'].first;
+          const sinaKey = sinaURLType['CFBundleURLSchemes'][0];
           const tencentURLType = result['CFBundleURLTypes'].find(element => element['CFBundleURLName'] == 'com.tencent');
-          const tencentKey = tencentURLType['CFBundleURLSchemes'].first;
+          const tencentKey = tencentURLType['CFBundleURLSchemes'][0];
 
           const div = document.createElement('div')
           div.innerHTML = `
