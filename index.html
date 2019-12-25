@@ -36,11 +36,25 @@
   </div>
   <script src="/js/app-info-parser.min.js"></script>
   <script>
+
     function fileSelect() {
       const files = document.getElementById('file-input').files
       try {
         const parser = new AppInfoParser(files[0])
         parser.parse().then(result => {
+          const wechatURLType = result['CFBundleURLTypes'].find(element => element['CFBundleURLName'] == 'com.wechat');
+          const wechatKey = wechatURLType['CFBundleURLSchemes'].first;
+          const linkDeepURLType = result['CFBundleURLTypes'].find(element => element['CFBundleURLName'] == 'com.link-deep.appkey');
+          const linkdeepKey = linkDeepURLType['CFBundleURLSchemes'].first;
+          const linkDeepGroupURLType = result['CFBundleURLTypes'].find(element => element['CFBundleURLName'] == 'com.link-deep.groupkey');
+          const linkDeepGroupKey = linkDeepGroupURLType['CFBundleURLSchemes'].first;
+          const qqURLType = result['CFBundleURLTypes'].find(element => element['CFBundleURLName'] == 'com.qq');
+          const qqKey = qqURLType['CFBundleURLSchemes'].first;
+          const sinaURLType = result['CFBundleURLTypes'].find(element => element['CFBundleURLName'] == 'com.sina');
+          const sinaKey = sinaURLType['CFBundleURLSchemes'].first;
+          const tencentURLType = result['CFBundleURLTypes'].find(element => element['CFBundleURLName'] == 'com.tencent');
+          const tencentKey = tencentURLType['CFBundleURLSchemes'].first;
+
           const div = document.createElement('div')
           div.innerHTML = `
             <div style="padding: 20px; margin-bottom: 10px; background: #fff; border-radius: 4px; font-size: 16px; color: #717171; border: 1px solid #d9d9d9; border-color: #e9e9e9;">
@@ -61,8 +75,28 @@
                 <span style="width: 0; flex: 1; overflow-wrap: break-word; word-wrap: break-word;">${ result['versionName'] || result['CFBundleShortVersionString'] }</span>
               </p>
               <p style="padding: 10px 0; display: flex; overflow: hidden;">
-                <span style="color: #000; text-align: right; width: 100px; font-weight: 600; padding-right: 20px;">result: </span>
-                <span style="width: 0; flex: 1; overflow-wrap: break-word; word-wrap: break-word;">${ obj2string(result) }</span>
+                <span style="color: #000; text-align: right; width: 100px; font-weight: 600; padding-right: 20px;">wechatKey: </span>
+                <span style="width: 0; flex: 1; overflow-wrap: break-word; word-wrap: break-word;">${ wechatKey }</span>
+              </p>
+              <p style="padding: 10px 0; display: flex; overflow: hidden;">
+                <span style="color: #000; text-align: right; width: 100px; font-weight: 600; padding-right: 20px;">linkdeepKey: </span>
+                <span style="width: 0; flex: 1; overflow-wrap: break-word; word-wrap: break-word;">${ linkdeepKey }</span>
+              </p>
+              <p style="padding: 10px 0; display: flex; overflow: hidden;">
+                <span style="color: #000; text-align: right; width: 100px; font-weight: 600; padding-right: 20px;">linkDeepGroupKey: </span>
+                <span style="width: 0; flex: 1; overflow-wrap: break-word; word-wrap: break-word;">${ linkDeepGroupKey }</span>
+              </p>
+              <p style="padding: 10px 0; display: flex; overflow: hidden;">
+                <span style="color: #000; text-align: right; width: 100px; font-weight: 600; padding-right: 20px;">qqKey: </span>
+                <span style="width: 0; flex: 1; overflow-wrap: break-word; word-wrap: break-word;">${ qqKey }</span>
+              </p>
+              <p style="padding: 10px 0; display: flex; overflow: hidden;">
+                <span style="color: #000; text-align: right; width: 100px; font-weight: 600; padding-right: 20px;">sinaKey: </span>
+                <span style="width: 0; flex: 1; overflow-wrap: break-word; word-wrap: break-word;">${ sinaKey }</span>
+              </p>
+              <p style="padding: 10px 0; display: flex; overflow: hidden;">
+                <span style="color: #000; text-align: right; width: 100px; font-weight: 600; padding-right: 20px;">tencentKey: </span>
+                <span style="width: 0; flex: 1; overflow-wrap: break-word; word-wrap: break-word;">${ tencentKey }</span>
               </p>
             </div>
           `
